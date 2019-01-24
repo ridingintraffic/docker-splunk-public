@@ -7,3 +7,4 @@ splunk-ansible
 **/*.pyc
 *.xml
 .env
+*.lic
