@@ -31,7 +31,6 @@ services:
     command: start
     hostname: dep1
     container_name: dep1
-    restart: always 
     environment:
       - SPLUNK_START_ARGS=--accept-license
       - SPLUNK_DEPLOYER_URL=dep1
@@ -53,7 +52,6 @@ services:
     image: ${SPLUNK_IMAGE:-splunk/splunk:latest}
     hostname: so1
     container_name: so1
-    restart: always 
     environment:
       - SPLUNK_START_ARGS=--accept-license
       - SPLUNK_PASSWORD=changeme
@@ -65,7 +63,6 @@ services:
       - "8000:8000"
       - "8089:8089"
     volumes:
-      - so1-etc:/opt/splunk/etc
-      - so1-var:/opt/splunk/var
-
+      - /files/8tb/mounts/docker/splunk/so1-etc:/opt/splunk/etc
+      - /files/8tb/mounts/docker/splunk/so1-var:/opt/splunk/var
 
