@@ -8,3 +8,4 @@ splunk-ansible
 *.xml
 .env
 *.lic
+so1*
